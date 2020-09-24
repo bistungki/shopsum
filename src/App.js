@@ -1,6 +1,5 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './logo.svg';
 import './App.css';
 import { Container, FormGroup, Row, Col, Button, Input } from 'reactstrap';
 import NumberFormat from 'react-number-format';
@@ -25,11 +24,10 @@ class App extends Component {
             hargaBeliPerItem: hbp,
             keuntungan: val.dijual - hbp
         });
-        console.log(val)
     }
 
     onChangeHandel = (e, f) => {
-        const { formattedVal, value, float } = e;
+        const { formattedVal, value } = e;
         let data = { [f]: value }
         this.setState(data)
         setInterval(() => {
@@ -39,9 +37,6 @@ class App extends Component {
                 keuntungan: this.state.dijual - hbp
             });
         }, 200);
-
-    }
-    componentDidUpdate() {
 
     }
 
